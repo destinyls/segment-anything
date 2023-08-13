@@ -157,6 +157,7 @@ class Sam(nn.Module):
             mode="bilinear",
             align_corners=False,
         )
+
         masks = masks[..., : input_size[0], : input_size[1]]
         masks = F.interpolate(masks, original_size, mode="bilinear", align_corners=False)
         return masks
